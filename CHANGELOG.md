@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+Initial release: A triangle widget with rounded edges that can be customised in size and fill/border colours.
