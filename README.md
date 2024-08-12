@@ -11,29 +11,26 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A triangle widget with rounded edges that can be customised in size and fill/border colours.
 
-## Features
+## Demo
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+<img src="example/assets/demos/demo_5s.gif" width="25%" height="25%"/>
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+RoundedTriangle depends on the following:\
+-[Flutter material component widgets](https://docs.flutter.dev/ui/widgets/material)\
+-[Dart math library](https://api.dart.dev/stable/3.5.0/dart-math/dart-math-library.html)
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+To use, insert RoundedTriangle() into your widget tree. A working example is found in the example directory's [main.dart](example/lib/main.dart) file
 
 ```dart
-const like = 'sample';
+RoundedTriangle(
+  fillColor: Colors.white, // [Optional] Defaults to package:flutter/src/material/colors "white"
+  borderColor: Colors.black, // [Optional] Border will only be visible if a colour is provided
+  iconSize: 200, // [Optional] Defaults to 48
+)
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
