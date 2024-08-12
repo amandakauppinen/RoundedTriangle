@@ -4,13 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:rounded_triangle/triangle_painter.dart';
 
 const Color defaultFillColor = Colors.white;
-const Color defaultBorderColor = Colors.black;
 const double defaultIconSize = 48;
 
 /// Create a customised-rounded triangle
 ///
 /// [fillColor] (Optional) Fill color for inside of triangle, defaults to [defaultFillColor]
-/// [borderColor] (Optional) Border color for edges of triangle, defaults to [defaultBorderColor]
+/// [borderColor] (Optional) Border color for edges of triangle
 /// [iconSize] (Optional) Size of triangle container, defaults to [defaultIconSize]
 class RoundedTriangle extends StatelessWidget {
   final Color? fillColor;
@@ -52,7 +51,7 @@ class RoundedTriangle extends StatelessWidget {
                   child: CustomPaint(
                       painter: TrianglePainter(
                           paintingStyle: PaintingStyle.stroke,
-                          color: borderColor ?? defaultBorderColor,
+                          color: borderColor!,
                           isBorder: true)))),
       ],
     );
