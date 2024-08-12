@@ -35,24 +35,27 @@ class RoundedTriangle extends StatelessWidget {
           height: adjustedSize,
           width: adjustedSize,
           child: SizedBox(
-              height: adjustedSize,
-              width: adjustedSize,
-              child: CustomPaint(
-                  painter: TrianglePainter(paintingStyle: PaintingStyle.fill, color: fillColor!))),
+            height: adjustedSize,
+            width: adjustedSize,
+            child: CustomPaint(
+              painter: TrianglePainter(paintingStyle: PaintingStyle.fill, color: fillColor!),
+            ),
+          ),
         ),
         // Draw border if color or thickness has been set
         if (borderColor != null)
           SizedBox(
+            height: adjustedSize,
+            width: adjustedSize,
+            child: SizedBox(
               height: adjustedSize,
               width: adjustedSize,
-              child: SizedBox(
-                  height: adjustedSize,
-                  width: adjustedSize,
-                  child: CustomPaint(
-                      painter: TrianglePainter(
-                          paintingStyle: PaintingStyle.stroke,
-                          color: borderColor!,
-                          isBorder: true)))),
+              child: CustomPaint(
+                painter: TrianglePainter(
+                    paintingStyle: PaintingStyle.stroke, color: borderColor!, isBorder: true),
+              ),
+            ),
+          ),
       ],
     );
   }
