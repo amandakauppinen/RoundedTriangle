@@ -26,27 +26,29 @@ class RoundedTriangle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Increase icon size by 10% due to painter issues
+    final adjustedSize = iconSize! + (iconSize! * 0.1);
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
         // Base triangle shape
         SizedBox(
-          height: iconSize,
-          width: iconSize,
+          height: adjustedSize,
+          width: adjustedSize,
           child: SizedBox(
-              height: iconSize,
-              width: iconSize,
+              height: adjustedSize,
+              width: adjustedSize,
               child: CustomPaint(
                   painter: TrianglePainter(paintingStyle: PaintingStyle.fill, color: fillColor!))),
         ),
         // Draw border if color or thickness has been set
         if (borderColor != null)
           SizedBox(
-              height: iconSize,
-              width: iconSize,
+              height: adjustedSize,
+              width: adjustedSize,
               child: SizedBox(
-                  height: iconSize,
-                  width: iconSize,
+                  height: adjustedSize,
+                  width: adjustedSize,
                   child: CustomPaint(
                       painter: TrianglePainter(
                           paintingStyle: PaintingStyle.stroke,
