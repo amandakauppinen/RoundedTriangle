@@ -73,8 +73,9 @@ class TrianglePainter extends CustomPainter {
   /// Returns a [Point] on a line given [start] and [end] points
   /// [closeToStart] dictates if the point returned will be closer to [start] (true) or [end] (false)
   Point getLinePoint(Point start, Point end, {required bool closeToStart}) {
-    int x = (start.x * (1 - distanceFactor) + end.x * distanceFactor).round();
-    int y = (start.y * (1 - distanceFactor) + end.y * distanceFactor).round();
+    final correctedDistanceFactor = closeToStart ? distanceFactor : (1 - distanceFactor);
+    int x = (start.x * (1 - correctedDistanceFactor) + end.x * correctedDistanceFactor).round();
+    int y = (start.y * (1 - correctedDistanceFactor) + end.y * correctedDistanceFactor).round();
 
     return Point(x, y);
   }

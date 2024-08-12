@@ -74,24 +74,28 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Set different colors', style: _textStyle),
-          SizedBox(
-              height: _triangleMaxSize,
-              width: _triangleMaxSize,
-              child: RoundedTriangle(
-                fillColor: _fillColor,
-                borderColor: _borderColor,
-                iconSize: _triangleMaxSize,
-              )),
+          const Padding(padding: EdgeInsets.symmetric(vertical: 16)),
           Text('Set different sizes', style: _textStyle),
-          SizedBox(
-              height: _triangleMaxSize,
-              width: _triangleMaxSize,
-              child: RoundedTriangle(
-                fillColor: Colors.white,
-                borderColor: Colors.black,
-                iconSize: _triangleSize,
-              )),
+          Flexible(
+              child: SizedBox(
+                  height: _triangleMaxSize,
+                  width: _triangleMaxSize,
+                  child: RoundedTriangle(
+                    fillColor: Colors.white,
+                    borderColor: Colors.black,
+                    iconSize: _triangleSize,
+                  ))),
+          Text('Set different colors', style: _textStyle),
+          const Padding(padding: EdgeInsets.symmetric(vertical: 16)),
+          Flexible(
+              child: SizedBox(
+                  height: _triangleMaxSize,
+                  width: _triangleMaxSize,
+                  child: RoundedTriangle(
+                    fillColor: _fillColor,
+                    borderColor: _borderColor,
+                    iconSize: _triangleMaxSize,
+                  ))),
         ],
       )),
     );
